@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { createContent } from '../actions/content';
+import { createContent } from '../../actions/content';
 import InputForm from './InputForm'
 
 class InputPage extends PureComponent{
@@ -12,7 +12,7 @@ class InputPage extends PureComponent{
     render() {
         return(
             <div className='holder'>
-               <h1 id='title'>Form</h1> 
+               <h1 id='title'>Share a recommendation</h1> 
                 <InputForm onSubmit={this.createContent}/>
             </div>
         )

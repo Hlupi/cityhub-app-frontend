@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import LoginPage from './components/login/LoginPage'
 import LogoutPage from './components/login/LogoutPage'
-import InputPage from './components/InputPage'
+import InputPage from './components/content/InputPage'
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 class App extends Component {

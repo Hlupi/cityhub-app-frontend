@@ -66,7 +66,7 @@ export default class InputForm extends PureComponent {
             
             <br />
             <Button variant="outlined" type="submit">
-            Log in
+            Post it
             </Button>
         </form>
       </div>
