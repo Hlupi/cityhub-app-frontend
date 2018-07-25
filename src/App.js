@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import LoginForm from './components/LoginForm'
+import LoginPage from './components/LoginPage'
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
           <h1 className="App-title">CityHub</h1>
         </header>
         <main>
-          <LoginForm />
+          <LoginPage />
         </main>
       </div>
     );
