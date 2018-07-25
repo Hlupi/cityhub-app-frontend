@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { login } from '../actions/users'
+import { login } from '../../actions/users'
 import LoginForm from './LoginForm'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
