@@ -1,15 +1,23 @@
 import React, { PureComponent } from 'react'
 import { login } from '../../actions/users'
 import LoginForm from './LoginForm'
-// import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 
 class LoginPage extends PureComponent {
+  state = {
+    user: false
+  }
+
   handleSubmit = (data) => {
 		this.props.login(data.email, data.password)
-	}
-
+  }
+  
   render() {
+    if (this.props.user === true) return (
+			<Redirect to="/" />
+    )
+    
     return (
       <div>
         <h1>Please log in:</h1>
@@ -23,7 +31,6 @@ class LoginPage extends PureComponent {
 
 const mapStateToProps = function (state) {
 	return {
-		currentUser: state.currentUser,
     error: state.login.error
 	}
 }
