@@ -4,12 +4,24 @@ import LoginPage from './components/login/LoginPage'
 import LogoutPage from './components/login/LogoutPage'
 import InputPage from './components/content/InputPage'
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import TopBar from './components/layout/TopBar'
+import {connect} from 'react-redux'
 
 class App extends Component {
+
   render() {
+    const { user } = this.props
     return (
       <Router>
         <div className="App">
+          <nav>
+            {/* {
+              user &&
+              <TopBar />
+            } */}
+            <TopBar />
+
+          </nav>
           <main>
             <Route exact path="/contents" component={InputPage} />
             <Route exact path="/login" component={LoginPage} />
@@ -22,4 +34,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  user: state.user
+})
+
+export default connect(mapStateToProps)(App) 
