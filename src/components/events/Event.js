@@ -1,6 +1,4 @@
 import React, {PureComponent} from 'react'
-import { createDecipheriv } from 'crypto';
-
 
 export default class Event extends PureComponent {
     state = {}
@@ -40,4 +38,3 @@ export default class Event extends PureComponent {
 //     else if (event.image === null) return event.address && event.description
 //     else return (event.image&&event.address&&event.description) 
 // } 
-
