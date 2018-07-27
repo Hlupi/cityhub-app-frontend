@@ -1,40 +1,21 @@
 import React, {PureComponent} from 'react'
+import '../carousel.css'
 
 export default class Event extends PureComponent {
     state = {}
 
     render() {
-            if (event.image===null && event.address===null) return (
-                <div>
-                    <p>{event.description}</p>
-                </div>
-            )
-            else if (event.address === null) return (
-                <div>
-                    <img src={event.image} alt="" />
-                    <p>{event.description}</p>
-                </div>
-            )
-            
-            else if (event.image === null) return (
-                <div>
-                    <p>{event.address}</p> 
-                    <p>{event.description}</p>
-                </div>
-            )            
-            else return (
-                <div>
-                    <img src={event.image} alt="" />
-                    <p>{event.address}</p> 
-                    <p>{event.description}</p>
-                </div>               
-            )
-    }       
-}
+        return (
+            <div>
+            <div className='divSlide'>
+            <img src="http://itsaboutpeople.co.za/wp-content/uploads/2017/02/business-people-1.jpg" width='60%'/>
+            </div>
 
-// {
-//     if (event.image===null && event.address===null) return event.description
-//     else if (event.address === null) return event.image && event.description
-//     else if (event.image === null) return event.address && event.description
-//     else return (event.image&&event.address&&event.description) 
-// } 
+            <div className='legend'>
+                <h1>{this.props.name}</h1>
+                <p>Rob is a Dutch guy!</p>
+            </div>
+            </div>
+        )
+    }
+}
