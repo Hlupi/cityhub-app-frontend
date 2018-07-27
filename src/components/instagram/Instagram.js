@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import '../carousel.css'
+import logo from '../images/cityhub-logo-black.svg'
 
 export default class Instagram extends PureComponent {
     state = {}
@@ -20,13 +21,14 @@ export default class Instagram extends PureComponent {
     render() {
         return (
             <div>
+            <img src={logo} className='logoStyle'/>
             <div className='divSlide'>
-                <img src={ this.datasample.display_url} />         
+                <img src={this.props.data.display_url} />         
             </div>
 
             <div className='legend'>
-                <h1>{this.props.name}</h1>
-                <p>Rob is a Dutch guy!</p>
+                <h1>{this.props.data.name}</h1>
+                <p>{this.props.data.text}</p>
             </div>
 
             </div>

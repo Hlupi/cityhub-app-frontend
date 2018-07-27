@@ -8,7 +8,7 @@ export default class Event extends PureComponent {
         return (
             <div>
             <div className='divSlide'>
-            <img src="http://itsaboutpeople.co.za/wp-content/uploads/2017/02/business-people-1.jpg" width='60%'/>
+            {/* <img src="http://itsaboutpeople.co.za/wp-content/uploads/2017/02/business-people-1.jpg" width='70%'/> */}
             </div>
 
             <div className='legend'>
