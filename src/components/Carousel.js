@@ -15,25 +15,34 @@ class TestCarousel extends Component {
     componentDidMount() {
         this.props.fetchSliderData()
     }
-
-    // slides = () => {
-    //     return (
-    //         <div>
-            
-    //         </div>
-    //     )
-    // }
-    
+   
     render() {
+        const newData = this.props.slider.map(item => item.date)
+        const justDate = newData.slice(11, 13)
+        console.log(this.props.slider)
+    
+        console.log(justDate)
+        
         return (
             <div>
-            <Carousel autoPlay interval={9000} infiniteLoop showThumbs={false} showIndicators={false} showStatus={false}>
+            <Carousel autoPlay interval={10000} infiniteLoop showThumbs={false} showIndicators={false} showStatus={false}>
                 {this.props.slider.map(item => {
-                    if (item.source === "instagram") {
+                    if (item.source === "instagram" && justDate !== null) {
+                        return (
+                        <img src='https://www.telegraph.co.uk/content/dam/news/2016/09/08/107667228_beech-tree-NEWS_trans_NvBQzQNjv4BqplGOf-dgG3z4gg9owgQTXEmhb5tXCQRHAvHRWfzHzHk.jpg?imwidth=450' />
+                        )
+                    } else if (item.source === "instagram") {
                         return (
                             <li ><Instagram data={item}/></li>
                         )
                     }
+                    
+                    // if (item.source === "instagram" && justDate !== null) {
+                    //     return (
+                    //     <img src='https://www.telegraph.co.uk/content/dam/news/2016/09/08/107667228_beech-tree-NEWS_trans_NvBQzQNjv4BqplGOf-dgG3z4gg9owgQTXEmhb5tXCQRHAvHRWfzHzHk.jpg?imwidth=450' />
+                    //     )
+                    // }
+
                     if (item.source === "event" && item.address === null) {
                         return (
                             <li className='divSlide'><Text name={item.name} /></li>

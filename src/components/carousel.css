@@ -74,7 +74,9 @@
     .divSlide{
       width: 100%;
       display: inline-block;
-      pointer-events: none; }
+      pointer-events: none;
+      object-fit: cover;
+   }
     .carousel .carousel {
       position: relative; }
     .carousel .control-arrow {
@@ -275,9 +277,9 @@ h1 {
 }
 
 .logoStyle {
-  margin-top: 80px;
+  margin-top: 70px;
   float: right;
-  margin-right: 3%;
+  margin-right: 7%;
 }
 
 .speech-bubble {
@@ -323,3 +325,19 @@ h1 {
   display:block;
   width:0;
 }
+
+.blueHashtag {
+  color: blue;
+}
+
+#hashStyle {
+  font-size: 28px;
+  color: blue;
+  clear: left;
+}
+
+.instaHashSign {
+  padding-top: 50px;
+}
+
+
