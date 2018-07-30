@@ -16,25 +16,25 @@ class TestCarousel extends Component {
         this.props.fetchSliderData()
     }
 
-    slides = () => {
-        return (
-            <div>
+    // slides = () => {
+    //     return (
+    //         <div>
             
-            </div>
-        )
-    }
+    //         </div>
+    //     )
+    // }
     
     render() {
         return (
             <div>
-            <Carousel autoPlay interval={5000} infiniteLoop showThumbs={false} showIndicators={false} showStatus={false}>
-                {this.props.slider.hashtags.map(item => {
+            <Carousel autoPlay interval={9000} infiniteLoop showThumbs={false} showIndicators={false} showStatus={false}>
+                {this.props.slider.map(item => {
                     if (item.source === "instagram") {
                         return (
                             <li ><Instagram data={item}/></li>
                         )
                     }
-                    if (item.source === "event" && item.display_url === null) {
+                    if (item.source === "event" && item.address === null) {
                         return (
                             <li className='divSlide'><Text name={item.name} /></li>
                         )
@@ -58,4 +58,4 @@ const mapStateToProps = function (state) {
     }
 }
 
-export default connect(mapStateToProps, { fetchSliderData })(TestCarousel)
+export default connect(mapStateToProps, { fetchSliderData })(TestCarousel)  

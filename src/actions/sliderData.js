@@ -13,6 +13,18 @@ const successSlider = data => ({
 export const fetchSliderData = () => (dispatch) => {
   request
     .get(`https://cityhub-backend.herokuapp.com/hashtagsaccepted`)
-    .then(result => dispatch(successSlider(result.body)))
+    .then(result => dispatch(successSlider(result.body)))  
     .catch(err => console.error(err))
 }
+
+
+
+// export const fetchAllEvents = () => (dispatch) => {
+//     request
+//     .get(`${ baseUrl }/events`)
+//     .then( response => dispatch({
+//         type: FETCHED_ALL_EVENTS,
+//         payload: response.body.events
+//     }))
+//     .catch(err => alert(err))
+// }
