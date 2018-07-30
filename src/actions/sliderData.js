@@ -2,6 +2,7 @@ import * as request from 'superagent'
 
 
 export const FETCH_SLIDER_DATA = 'FETCH_SLIDER_DATA'
+export const FETCH_ALL_EVENTS = 'FETCH_ALL_EVENTS'
 
 
 const successSlider = data => ({
@@ -18,13 +19,12 @@ export const fetchSliderData = () => (dispatch) => {
 }
 
 
-
-// export const fetchAllEvents = () => (dispatch) => {
-//     request
-//     .get(`${ baseUrl }/events`)
-//     .then( response => dispatch({
-//         type: FETCHED_ALL_EVENTS,
-//         payload: response.body.events
-//     }))
-//     .catch(err => alert(err))
-// }
+export const fetchAllEvents = () => (dispatch) => {
+    request
+    .get(`https://cityhub-backend.herokuapp.com/events`)
+    .then( response => dispatch({
+        type: FETCH_ALL_EVENTS,
+        payload: response.body.events
+    }))
+    .catch(err => alert(err))
+}
