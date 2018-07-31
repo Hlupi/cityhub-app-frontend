@@ -15,7 +15,7 @@ class App extends Component {
             <Route exact path="/contents" component={InputPage} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/logout" component={LogoutPage} />
-            <Route exact path="/carousel" component={TestCarousel} />
+            <Route exact path="/carousel/:location" component={TestCarousel} />
             <Route exact path="/" render={() => <Redirect to="/contents" />} />
           </main>
         </div>

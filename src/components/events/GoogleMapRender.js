@@ -3,6 +3,8 @@ import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 import { GoogleMapsStyle } from './GoogleMapsStyle'
 import { ApiKey } from './Key'
+import '../carousel.css'
+import markerCH from '../images/pin-black&w-logo.png'
 /*global google*/
 
 const cityHubAmsterdam = { lat: 52.3672857, lng: 4.8650415 }
@@ -29,29 +31,30 @@ const MapComponent = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${ ApiKey }`,
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `600px`, width:'80%' }} />,
+    containerElement: <div style={{ height: `1000px`, width:'100%' }} />,
     mapElement: <div style={{ height: `100%` }} />
   }),
   withScriptjs,
   withGoogleMap
 )((props) =>
   <GoogleMap
-    defaultZoom={12}
+    defaultZoom={13}
     defaultCenter={cityHubAmsterdam}
     defaultOptions={{ styles: GoogleMapsStyle, disableDefaultUI: true }}
     ref={(ref) => { this.map = ref }}
     disableDefaultUI={{disableDefaultUI: true}}
-    
   >
     { <Marker 
       position={cityHubAmsterdam} 
-      defaultAnimation={google.maps.Animation.DROP} 
+      defaultAnimation={google.maps.Animation.DROP}
+      icon={markerCH}
     /> }
 
     { dummyData.map((a, index) => <Marker 
       position={ {lat: a.lat, lng: a.lng} } 
       defaultAnimation={ google.maps.Animation.DROP }
       key={ index }
+    //   icon={{icon: }}
       />) }
 
       
