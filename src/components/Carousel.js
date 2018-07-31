@@ -1,12 +1,11 @@
 import  React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Carousel } from 'react-responsive-carousel';
 import './carousel.css'
 import Instagram from './instagram/Instagram'
 import Event from './events/Event'
 import Text from './events/Text'
 import { connect } from 'react-redux';
-import { fetchSliderData, fetchAllEvents } from '../actions/sliderData'
+import { fetchSliderData } from '../actions/sliderData'
 
 
 
@@ -14,7 +13,6 @@ class TestCarousel extends Component {
 
     componentDidMount() {
         this.props.fetchSliderData()
-        this.props.fetchAllEvents()
     }
    
     render() {
@@ -25,11 +23,12 @@ class TestCarousel extends Component {
         
         return (
             <div>
-            <Carousel autoPlay interval={10000} infiniteLoop showThumbs={false} showIndicators={false} showStatus={false}>
+            <Carousel autoPlay interval={3000} infiniteLoop showThumbs={false} showIndicators={false} showStatus={false}>
                 {this.props.slider.map(item => {
+                    console.log(item)
                     if (item.source === "instagram") {
                         return (
-                            <div key={item}><Instagram data={item} /></div>
+                            <div><Instagram data={item} /></div>
                         )
                     }
 
@@ -39,14 +38,15 @@ class TestCarousel extends Component {
                     //     )
                     // }
 
-                    if (item.source === "event" && item.address === null) {
-                        return (
-                            <li className='divSlide'><Text name={item.name} /></li>
-                        )
-                    }
+                    // if (item.source === "event" && item.address === null) {
+                    //     return (
+                    //         <li className='divSlide'><Text name={item.name} /></li>
+                    //     )
+                    // }
+                    
                     if (item.source === "event") {
                         return (
-                            <li><Event name={item.name} key={item.id}/></li>
+                            <li><Event data={item}/></li>
                         )
                     }
                 
@@ -63,4 +63,4 @@ const mapStateToProps = function (state) {
     }
 }
 
-export default connect(mapStateToProps, { fetchSliderData, fetchAllEvents })(TestCarousel)  
+export default connect(mapStateToProps, { fetchSliderData })(TestCarousel)  

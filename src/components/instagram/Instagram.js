@@ -14,9 +14,9 @@ export default class Instagram extends PureComponent {
         
         return (
             <div>
-                <img src={logo} className='logoStyle'/>
+                <img src={logo} className='logoStyle' alt=''/>
                 <div className='divSlide'>
-                    <img src={this.props.data.display_url} className='instaImage'/>         
+                    <img src={this.props.data.display_url} className='instaImage' alt=''/>         
                 </div>
 
                 <div className='legend'>
@@ -26,7 +26,7 @@ export default class Instagram extends PureComponent {
                     <table className='tableStyle'>
                         <tbody>
                             <tr>
-                                <td className='instaHashSign'><img src={instaLogo} width='40px'/></td>
+                                <td className='instaHashSign'><img src={instaLogo} width='40px' alt=''/></td>
                                 <td><p id='hashStyle'>#{this.props.data.hashtag}</p></td>
                             </tr>
                         </tbody>

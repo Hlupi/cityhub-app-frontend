@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react'
 import GoogleMapRender from './GoogleMapRender'
 import '../carousel.css'
+import logo from '../images/cityhub-logo-black.svg'
 
 export default class Event extends PureComponent {
     state = {}
@@ -8,14 +9,15 @@ export default class Event extends PureComponent {
     render() {
         return (
             <div>
-            <div className='divSlide'>
-            <GoogleMapRender />
-            {/* <img src="http://itsaboutpeople.co.za/wp-content/uploads/2017/02/business-people-1.jpg" width='70%'/> */}
-            </div>
-
-            <div className='legend'>         
-                <h1>{this.props.name}</h1> 
-            </div>
+                <img src={logo} className='logoStyle' alt=''/>
+                <div className='divSlide'>
+                    <GoogleMapRender />
+                </div>
+                <div className='legend'>         
+                    <h1>{this.props.data.title}</h1> 
+                    <p>{this.props.data.description}</p>
+                    <p>address: {this.props.data.address}</p>
+                </div>
             </div>
         )
     }
