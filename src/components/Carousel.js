@@ -21,7 +21,7 @@ class TestCarousel extends Component {
     render() {
         return (
             <div>
-            <Carousel autoPlay interval={15000} infiniteLoop showThumbs={false} showIndicators={false} showStatus={false}>
+            <Carousel autoPlay interval={3000} infiniteLoop showThumbs={false} showIndicators={false} showStatus={false}>
                 {this.props.slider.map(item => {
                     if (item.source === "instagram") {
                         return (

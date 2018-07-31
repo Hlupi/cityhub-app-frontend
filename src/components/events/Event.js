@@ -30,7 +30,7 @@ export default class Event extends PureComponent {
             <div>
                 <img src={logo} className='logoStyle' alt=''/>
                 <div className='divSlide'>
-                    <img src={this.props.data.display_url} className='instaImage' alt=''/>
+                    <img src={this.props.data.image} className='instaImage' alt=''/>
                 </div>
                 <div className='legend'>         
                     <h1>{this.props.data.title}</h1> 

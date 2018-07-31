@@ -19,10 +19,6 @@ export default class Events extends PureComponent {
                         <h1>{item.title}</h1>
                         <p>{item.description}</p><br /><hr />
                     </div>))} 
-                     
-                    {/* <h1>{this.props.data.title}</h1> 
-                    <p>{this.props.data.description}</p>
-                    <p><i>{this.props.data.address}</i></p> */}
                 </div>
             </div>
         )
