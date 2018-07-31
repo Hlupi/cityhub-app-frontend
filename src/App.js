@@ -4,6 +4,7 @@ import LoginPage from './components/login/LoginPage'
 import LogoutPage from './components/login/LogoutPage'
 import InputPage from './components/content/InputPage'
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import  TestCarousel  from './components/Carousel';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
             <Route exact path="/contents" component={InputPage} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/logout" component={LogoutPage} />
+            <Route exact path="/carousel/:location" component={TestCarousel} />
             <Route exact path="/" render={() => <Redirect to="/contents" />} />
           </main>
         </div>
