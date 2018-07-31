@@ -188,7 +188,9 @@
         vertical-align: top;
         float: left;
         border: 0; 
-        background-color: red;
+        /* background-image: url('https://www.hotelprofessionals.nl/files/facebook/post/logo_9.png'); */
+        background-size: 100%;
+        background-color:rgb(177, 177, 177);
     }
 
     .carousel .divSlide .instaImage {

@@ -71,8 +71,9 @@ const MapComponent = compose(
 class GoogleMapRender extends React.PureComponent {
 
   render() {
+      const eventData = this.props.data
     return (
-      <MapComponent />
+         <MapComponent data={this.props.data}/>
     )
   }
 }
